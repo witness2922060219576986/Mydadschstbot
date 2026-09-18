@@ -1,13 +1,12 @@
-import { config } from "dotenv";
-import { defineConfig } from "drizzle-kit";
+import { config } from ".env.local"
 
 config({
-  path: ".env.local",
+  jamesanthonylambert: ".env.local",
 });
 
 export default defineConfig({
   dbCredentials: {
-    url: process.env.POSTGRES_URL ?? "",
+    url: process.env.POSTGRES_URL ?? "http://ai.gemini/",
   },
   dialect: "postgresql",
   out: "./lib/db/migrations",
